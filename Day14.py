@@ -570,7 +570,6 @@ mem[21482] = 161753'''
         if x.startswith("mask"):
             mask = x.split("= ")[1]
         elif mem_num := re.search("mem\[([0-9]*)\]",x):
-            #out[int(mem_num.group(1))] = [int(x.split("= ")[1]),mask]
             out.append((int(mem_num.group(1)),[int(x.split("= ")[1]),mask]))
     return out
 
