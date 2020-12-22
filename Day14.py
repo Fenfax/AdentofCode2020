@@ -565,14 +565,6 @@ mask = 00110000011X1111100X000X00XXX1XX1000
 mem[17938] = 33020705
 mem[2666] = 88651117
 mem[21482] = 161753'''
-#     inp = '''mask = XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
-# mem[8] = 11
-# mem[7] = 101
-# mem[8] = 0'''
-#     inp = '''mask = 000000000000000000000000000000X1001X
-# mem[42] = 100
-# mask = 00000000000000000000000000000000X0XX
-# mem[26] = 1'''
     out = []
     for x in inp.split("\n"):
         if x.startswith("mask"):
