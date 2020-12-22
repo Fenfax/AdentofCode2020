@@ -34,17 +34,23 @@ def s2():
             bus_timing[int(x)] = y
     
     print(bus_timing)
+    
+    current_time, step = 0, 1
+    for bus_id, offset in bus_timing.items():
+        while (current_time + offset) % bus_id != 0:
+            current_time += step
+        step *= bus_id
 
+    return current_time
+    
+    #slow
     current_time = 100000000000000
-    current_time = 100000586937155
-    current_time = 100105832739903
-    current_time = 556100168221130
     while True:
         tmp_arr = get_val(current_time,bus_timing)
         if len(tmp_arr) == len(bus_timing):
             return current_time
-        if 41 in tmp_arr:
-            current_time += 41
+        if max_num := max(bus_timing.keys()) in tmp_arr:
+            current_time += max_num
         else:
             current_time += 1
 
