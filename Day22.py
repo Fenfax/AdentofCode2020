@@ -162,11 +162,6 @@ def play_game(new_inp,level):
             inp[winnerplayer].append(played)
         # print(level,inp,winnerplayer)
     
-    sum_all =0
-    for i,x in enumerate(inp[winnerplayer][::-1]):
-        i += 1
-        sum_all += x*i
-    print(sum_all,winnerplayer)
     
     return winnerplayer,inp
 def s2(inp):
@@ -179,5 +174,5 @@ def s2(inp):
         sum_all += x*i
     print(sum_all,winnerplayer)
 
-# s1(get_input())
+s1(get_input())
 s2(get_input())
