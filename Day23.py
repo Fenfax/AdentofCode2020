@@ -15,7 +15,7 @@ def s2_input(inp):
 
 def s1(inp,move_cnt):
     cur_pos = 0
-    for z in range(move_cnt):
+    for _ in range(move_cnt):
         num_to_find = inp[cur_pos] - 1
         pickup = []
         for _ in range(3):
@@ -42,13 +42,10 @@ def s2(inp,move_cnt):
     work_dict = {x: y for x, y in zip(inp, inp[1:] + [inp[0]])}
     current_num = inp[0]
 
-    for z in range(move_cnt):
+    for _ in range(move_cnt):
         tmp_num = current_num
         picklist = []
         picklist = [tmp_num := work_dict[tmp_num]  for _ in range(3) ]
-        # for _ in range(3):
-        #     picklist.append(work_dict[tmp_num])
-        #     tmp_num = work_dict[tmp_num]
         work_dict[current_num] = work_dict[tmp_num]       
         num_to_find = current_num - 1
         while num_to_find in picklist or num_to_find not in work_dict.keys():
@@ -59,8 +56,6 @@ def s2(inp,move_cnt):
         work_dict[picklist[-1]],work_dict[num_to_find] = work_dict[num_to_find],picklist[0]
 
         current_num = work_dict[current_num]
-
-
 
     current_num = 1
     out = []
@@ -73,10 +68,6 @@ def s2(inp,move_cnt):
     else:
         print(out[0],out[1],out[0]*out[1])
         
-    
-
-    
-
 
 s1(get_input(),100)
 s2(s2_input(get_input()),10000000)
