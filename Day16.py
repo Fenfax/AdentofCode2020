@@ -302,7 +302,7 @@ def get_useful_data():
     return ticket_info,my_tickt,nearby_tickets
 
 def s1():
-    ticket_info,my_tickt,nearby_tickets = get_useful_data()
+    ticket_info,_,nearby_tickets = get_useful_data()
 
     not_valid = 0
     new_nearby_tickets = []
@@ -323,8 +323,8 @@ def s1():
 
 
 def s2():
-    ticket_info,my_tickt,nearby_tickets = get_useful_data()
-    not_valid,new_nearby_tickets = s1()
+    ticket_info,my_tickt,_ = get_useful_data()
+    _,new_nearby_tickets = s1()
 
     pos = {}
     for a in range(len(ticket_info.keys())):
